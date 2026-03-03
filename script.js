@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         piece.style.left = Math.random() * 100 + '%';
 
-        const size = Math.random() * 80 + 140;
+        const size = Math.random() * 40 + 80;
         piece.style.width = size + 'px';
         piece.style.height = size + 'px';
 
@@ -147,5 +147,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // 👇 Intervalo estable
-    setInterval(createConfettiPiece, 1300);
+    setInterval(createConfettiPiece, 2000);
 });
