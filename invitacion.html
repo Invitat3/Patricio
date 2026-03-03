@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Patricio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cookie&family=Emblema+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/spongeboy-me-bob" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--Video fondo-->
+    <video autoplay muted loop class="video-fondo">
+    <source src="imagen/" type="video/mp4">
+  </video>
+
+
+    <!-- Música de fondo -->
+    <!-- Botón de música -->
+    <div id="music-button">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <audio id="music" src="musica/Bob Esponja Intro.mp3" loop autoplay></audio>
+
+    <div class="container">
+        <img src="imagen/patrick.png" class="personaje bob">
+        <img src="imagen/bob-removebg-preview.png" class="personaje patricio">
+
+        <div class="confetti"></div>
+        <div class="bubbles"></div>
+        <div class="characters">
+
+            <img src="imagen/Spongebob Squarepants Sticker by Tainy.gif" alt="Stitch " class="stitch ">
+        </div>
+
+        <div class="overlay ">
+            <div class="imagenes-flotantes ">
+
+                <!-- <img src="imagen/" class="flotante ">-->
+            </div>
+            <h1 class="title ">Patricio</h1>
+
+
+            <!-- Imagen debajo del título -->
+
+            <h2 class="subtitle ">Te invita a su</h2>
+            <h2 class="subtitle ">¡Cumple #!</h2>
+            <img src="imagen/numero.png" alt=" Fiesta " class="party-image ">
+            <h3 class="subtitle ">15 de Marzo de 2028</h3>
+            <p>Faltan:</p>
+            <div class="countdown-container">
+                <p class="countdown-title"></p>
+                <div class="count-single">
+                    <div class="count-item">
+                        <span id="days">00</span>
+                        <small>Días</small>
+                    </div>
+                    <div class="count-item">
+                        <span id="hours">00</span>
+                        <small>Horas</small>
+                    </div>
+                    <div class="count-item">
+                        <span id="minutes">00</span>
+                        <small>Minutos</small>
+                    </div>
+                    <div class="count-item">
+                        <span id="seconds">00</span>
+                        <small>Segundos</small>
+                    </div>
+                </div>
+            </div>
+            <div class="info-icons ">
+                <div class="icon-box ">
+                    <img src="imagen/Birthday Felizcumpleanos Sticker by Tamara Sofia.gif" alt="Comida " class="icon ">
+                    <p>La fiesta comienza a las 2:00 PM</p>
+                </div>
+                <button class="kpop-play-btn" onclick="openKpopVideo()">
+  ▶
+</button>
+                <div class="icon-box ">
+                    <!--  <img src="imagen/surfe.webp " alt="Traje de baño " class="icon ">-->
+                    <h2>¡Te esperamos!</h2>
+                </div>
+            </div>
+            <div>
+                <p>Lugar: Umán, Yucatán</p>
+            </div>
+            <div><a href="https://maps.app.goo.gl/bLZjqoZNxe1Evt8A6" target="_blank " class="btn-location ">
+  📍 Ver ubicación
+</a>
+            </div>
+            <div>
+                <a href="https://wa.me/5219993698599 " target="_blank " class="btn ">Confirmar asistencia</a>
+            </div>
+
+        </div>
+    </div>
+    <div id="kpopModal" class="kpop-modal">
+        <div class="kpop-modal-content">
+            <span class="kpop-close" onclick="closeKpopVideo()">✖</span>
+
+            <video id="kpopVideo" width="100%" controls preload="auto">
+      <source src="musica/ssstik.io_@felicitube_1772563358837.mp4" type="video/mp4">
+    </video>
+
+        </div>
+
+    </div>
+    <div class="confetti"></div>
+    <div class="balloons"></div>
+    <div class="firma">INVITATE</div>
+    <script src="script.js "></script>
+    <script>
+        let musicWasPlaying = false;
+
+        function openKpopVideo() {
+            const modal = document.getElementById("kpopModal");
+            const video = document.getElementById("kpopVideo");
+            const music = document.getElementById("bgMusic");
+
+            modal.style.display = "flex";
+
+            if (music && !music.paused) {
+                musicWasPlaying = true;
+                music.pause();
+            }
+
+            video.play();
+        }
+
+        function closeKpopVideo() {
+            const modal = document.getElementById("kpopModal");
+            const video = document.getElementById("kpopVideo");
+            const music = document.getElementById("bgMusic");
+
+            modal.style.display = "none";
+
+            video.pause();
+            video.currentTime = 0;
+
+            if (music && musicWasPlaying) {
+                music.play();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
